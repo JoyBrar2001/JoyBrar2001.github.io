@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html{
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: grey black;
+}
+
+html::-webkit-scrollbar{
+    width: 6px;
+}
+
+html::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: grey;
+}
+
+html::-webkit-scrollbar-track{
+    background-color: black;
+}
+
+body {
+    font-family: Poppins;
+    margin: 0;
+    padding: 0;
+    background: black;
+}
+
+p{
+    color: white;
+}
+
+/*---------------------------------Trailer---------------------------------*/
+
+#blob{
+    height: 500px;
+    width: 500px;
+    border-radius: 100%;
+    background: linear-gradient(to right, aquamarine, mediumpurple);
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    translate: -50% -50%;
+
+
+    filter: blur(100px);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    animation: blobAnimation 20s infinite;
+}
+
+@keyframes blobAnimation{
+    0%{
+        rotate: 0deg;
+    }
+    50%{
+        scale: 1 1.2;
+    }
+    100%{
+        rotate: 360deg;
+    }
+}
+
+body:hover > #blob{
+    opacity: 0.4;
+}
+
+/*---------------------------------navbar---------------------------------*/
+
+nav {
+    position: fixed;
+    background: transparent;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 10;
+
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav h2{
+    color: white;
+    display: inline;
+    margin-left: 10px;
+}
+
+nav ul.center-text{
+    display: flex;
+    gap: 40px;
+    padding-right: 15px;
+}
+
+nav ul.icons{
+    display: flex;
+    gap: 20px;
+    padding-right: 15px;
+}
+
+nav ul li {
+    font-weight: 500;
+    display: inline-block;
+    color: white;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:visited {
+    color: white;
+}
+
+/*---------------------------------general properties---------------------------------*/
+
+main, .second-page, .third-page{
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+/*---------------------------------main---------------------------------*/
+
+main{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+}
+
+.container{
+    width: 500px;
+    overflow: hidden;
+}
+
+.container .text{
+    position: relative;
+    color: white;
+    font-size: 60px;
+    font-weight: 600;
+    align-items: start;
+}
+
+.container .small-text{
+    display: block;
+    font-size: 25px;
+}
+
+.main-right img{
+    height: 90vh;
+    width: auto;
+}
+
+.typing-text::after{
+    content: "";
+    width: 1px;
+    border-right: 4px solid white;
+    height: 100%;
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+/*---------------------------------Second Page---------------------------------*/
+.second-page{
+    height: 100vh;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+
+    place-items: center;
+}
+
+.second-page h1{
+    color: white;
+    grid-column: span 2;
+}
+
+.second-page .second-left{
+    align-self: start;
+}
+
+.second-page .second-left .img-languages{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.second-page .second-left img{
+    height: 80px;
+    width: auto;
+}
+
+.second-page .about-me{
+    padding: 20px;
+    text-align: center;
+}
+
+#js{
+    border-radius: 10%;
+}
+
+.hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(100%);
+    transition: all 0.5s ease-in-out;
+}
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0%);
+}
+
+.second-page .logo:nth-child(2){
+    transition-delay: 100ms;
+}
+.second-page .logo:nth-child(3){
+    transition-delay: 200ms;
+}
+.second-page .logo:nth-child(4){
+    transition-delay: 300ms;
+}
+.second-page .logo:nth-child(5){
+    transition-delay: 400ms;
+}
+
+.second-page .about-me{
+    align-self: start;
+}
+
+/*---------------------------------Third Page---------------------------------*/
+.third-page{
+    height: 200vh;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+    place-items: center;
+}
+
+.third-page h1{
+    color: white;
+    grid-column: span 3;
+    margin-top: 60px;
+}
+
+.third-page .project{
+    display: grid;
+    justify-content: center;
+    align-self: flex-start;
+}
+
+.third-page .project img{
+    width: 350px;
+    height: auto;
+    border-radius: 3%;
+    filter: saturate(0);
+    transition: all 0.5s ease-in-out;
+}
+
+.third-page .project img:hover{
+    filter: saturate(1);
+    transform: scale(1.05);
+}
+
+.third-page .project h3{
+    color: white;
+    text-align: center;
+
+    width: 100%;
+    max-width: 350px;
+    margin: 30px auto;
+}
+
+.hidden1{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(50%);
+    /* transition: all 0.5s cubic-bezier(.27,0,.54,1); */
+}.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0%);
+}
+
+
+.project:nth-child(1) img{
+    transition-delay: 0ms;
+}
+.project:nth-child(2) img{
+    transition-delay: 0ms;
+}
+.project:nth-child(3) img{
+    transition-delay: 100ms;
+}
+.project:nth-child(4) img{
+    transition-delay: 200ms;
+}
+
+.video{
+    grid-column: span 2;
+}
+
+.third-page .video h3{
+    max-width: 500px;
+}
+
+.video-container{
+    height: 450px;
+    width: 800px;
+}
+
+iframe{
+    border-radius: 15px;
+}
+
+/*---------------------------------Footer---------------------------------*/
+
+.footer{
+    height: 50vh;
+    width: 100%;
+
+    background: transparent;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+}
+
+.footer h1{
+    color: white;
+    grid-column: span 3;
+}
+
+.footer p{
+    line-height: 0.8rem;
+}
+
+.footer .footer-title{
+    font-weight: 200;
+}
+
+.footer .left{
+
+}
+
+/*---------------------------------Media Queries---------------------------------*/
+
+@media screen and (max-width:1200px) {
+    .third-page .project img{
+        width: 300px;
+    }
+
+    .video-container{
+        height: 380px;
+        width: 675px;
+    }
+}
