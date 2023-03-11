@@ -402,7 +402,7 @@ iframe {
     }
 }
 
-@media screen and (max-width:960px),
+@media (max-width:960px),
 (orientation : portrait) {
     main {
         padding-top: 20%;
@@ -455,7 +455,7 @@ iframe {
     }
 }
 
-@media screen and (max-width:600px),
+@media (max-width:600px),
 (orientation : portrait) {
 
     nav{
