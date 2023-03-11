@@ -145,7 +145,7 @@ main {
     min-height: 100vh;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     place-items: center;
 }
 
@@ -389,8 +389,6 @@ iframe {
     font-weight: 200;
 }
 
-.footer .left {}
-
 /*---------------------------------Media Queries---------------------------------*/
 
 @media screen and (max-width:1200px) {
@@ -404,31 +402,106 @@ iframe {
     }
 }
 
-@media screen and (max-width:960px) {
+@media screen and (max-width:960px),
+(orientation : portrait) {
     main {
         padding-top: 20%;
+        margin: auto;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        padding-top: 70%;
     }
 
     .main-left {
-        grid-column: span 2;
+        height: 50%;
+        grid-column: span 1;
     }
 
     .main-right {
-        grid-column: span 2;
+        height: 100%;
+        grid-column: span 1;
+    }
+
+    .main-right img {
+        height: 50vh;
+        width: auto;
+    }
+
+
+    .second-page{
+        grid-template-columns: 1fr;
+    }
+
+    .second-page h1{
+        grid-column: span 1;
     }
 
     .second-left {
-        grid-column: span 2;
+        grid-column: span 1;
     }
 
     .about-me {
-        grid-column: span 2;
+        grid-column: span 1;
+    }
+
+    main,
+    .second-page,
+    .third-page {
+        width: 100%;
+        max-width: none;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width:600px),
+(orientation : portrait) {
+
+    nav{
+        position: absolute;
+        flex-direction: column;
+    }
+
+    main,
+    .second-page,
+    .third-page {
+        width: 100%;
+        max-width: none;
+        margin: auto;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        padding-top: 70%;
+    }
+
+    .container {
+        width: 300px;
+    }
+
+    .container .text {
+        font-size: 2rem;
     }
 
     .third-page {
-        grid-template-columns: repeat(2, 1fr)
+        grid-template-columns: repeat(1, 1fr)
     }
-    .third-page h1{
-        grid-column: span 2;
+
+    .third-page h1 {
+        grid-column: span 1;
+    }
+
+    .video-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .video {
+        grid-column: span 1;
+    }
+
+    #blob {
+        opacity: 0.4;
     }
 }
