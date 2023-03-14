@@ -517,8 +517,12 @@ iframe {
         max-width: 500px;
     }
 
+    main.grid{
+        min-height: 80vh;
+    }
+
     main{
-        padding-top: 160px;
+        padding-top: 10px;
     }
 
     .main-right{
@@ -526,7 +530,7 @@ iframe {
     }
 
     nav{
-        position: absolute;
+        position: relative;
         flex-direction: column;
     }
 
